@@ -192,22 +192,24 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form" action="" method="post">
+                <form class="contact-form" id="contactForm" action="" method="post">
                     <div class="form_content">
-                        <label for="">NOM COMPLET</label>
-                        <input type="text" placeholder="Jean Dupon">
+                        <label for="nom">NOM COMPLET</label>
+                        <input type="text" id="nom" placeholder="Jean Dupon">
                     </div>
                     <div  class="form_content">
-                        <label for="">EMAIL</label>
+                        <label for="email">EMAIL</label>
                         <input type="email" name="email" id="email" placeholder="jean@exemple.com">
                     </div>
                     <div class="form_content">
-                        <label for="">MESSAGE</label>
-                        <textarea placeholder="Parlez-moi de votre projet..."></textarea>
+                        <label for="message">MESSAGE</label>
+                        <textarea  id="message" placeholder="Parlez-moi de votre projet..."></textarea>
                        <!-- <input type="textarea" name="message" id="message" placeholder="Parlez-moi de votre projet..."> -->
                     </div>
-                    <input type="button" value="ENVOYER LE MESSAGE" class="boutton">
+                    <input type="submit"  value="ENVOYER LE MESSAGE" class="boutton">
+                    <p id="messageErreur"></p>
                 </form>
+                
             </div>
 
         </section>

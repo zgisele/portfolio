@@ -59,3 +59,51 @@ if (menuHamburger && menuMobile) {
         menuMobile.classList.toggle("active");
     });
 }
+// **************************validation formulaire********************************************
+
+const formulaire = document.getElementById("contactForm");
+
+formulaire.addEventListener("submit", function(event) {
+
+    // Empêche l'envoi classique du formulaire
+    event.preventDefault();
+
+    // Récupération des valeurs
+    const nom = document.getElementById("nom").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const messageErreur = document.getElementById("messageErreur");
+
+
+    // Vérification des champs vides
+    if(nom === "" || email === "" || message === "") {
+
+        messageErreur.textContent = "Veuillez remplir tous les champs.";
+        messageErreur.style.color = "red";
+
+        return;
+    }
+
+
+    // Vérification de l'adresse email
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(!regexEmail.test(email)) {
+
+        messageErreur.textContent = "Veuillez entrer une adresse email valide.";
+        messageErreur.style.color = "red";
+
+        return;
+    }
+
+
+    // Si tout est correct
+    messageErreur.textContent = "Votre message a été envoyé avec succès !";
+    messageErreur.style.color = "green";
+
+
+    // Réinitialiser le formulaire
+    formulaire.reset();
+
+});
