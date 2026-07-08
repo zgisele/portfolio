@@ -1,22 +1,47 @@
 *{
     margin: 0px;
-    /* background-color:#fffffe; */
-     /* background-color: beige; */
-     background-color:whitesmoke;
-     /* background-color:rgb(218, 33, 33); */
-
-
-    
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+body{
+    background:whitesmoke;
+}
+.menu_hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu_hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+}
+.icon_mobile{
+    display:none;
+}
+    
+
 
 /* ***************************************style du header *************************************************************/
 
-nav{
+/* nav{
     display: flex;
     border-bottom:1px solid gray;
     align-items: center;
     padding: 30px;
     
+} */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+    border-bottom:1px solid gray;
+    padding: 30px;
 }
 .menu{
     display: flex;
@@ -213,7 +238,8 @@ h1{
     /* border: 3px solid rgb(255, 255, 255); */
     background-color:rgba(248, 248, 245, 0.5);
     width: 250px;
-    height: 100px;         
+    min-height: 180px;
+    /* height: 100px;          */
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -349,7 +375,8 @@ h1{
    display: flex;
     background-color: rgba(128, 128, 128, 0.0);
     gap: 20px;
-    margin-left: 300px;   
+    /* margin-left: 300px;    */
+    margin-left:auto;
 }
 .footer_liens p{
  
@@ -553,4 +580,584 @@ h1{
 .btn_contact_cta:hover{
     background: #006400;
     transform: translateY(-3px);
+}
+
+
+
+
+
+/*==========================
+RESPONSIVE
+===========================*/
+
+@media(max-width:768px){
+
+    nav{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        width:100%;
+        padding:20px;
+    }
+
+    .menu{
+        display:none;
+    }
+
+    .menu_hamburger{
+        display:flex;
+        margin-left:auto;
+    }
+
+}
+
+/* @media screen and (max-width: 768px) {
+
+    nav {
+        display: none;
+    }
+
+    .menu_hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-left: auto;
+    }
+
+} */
+
+.menu-toggle{
+    display:none;
+    font-size:30px;
+    color:green;
+    cursor:pointer;
+}
+
+/* Tablette */
+
+@media(max-width:992px){
+
+.section_profil{
+    flex-direction:column;
+}
+
+.photo{
+    text-align:center;
+}
+
+.photo img{
+    width:80%;
+}
+
+.bloc_competence{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.bloc_projet{
+    flex-direction:column;
+    gap:25px;
+}
+
+.content_projet{
+    width:100%;
+    box-sizing:border-box;
+}
+
+.contact{
+    flex-direction:column;
+}
+
+.section_footer{
+    flex-direction:column;
+    gap:20px;
+}
+
+.footer_liens{
+    margin-left:0;
+}
+
+.texte_apropos{
+    column-count:1;
+}
+
+}
+
+/* Mobile */
+
+.icon_mobile{
+    display:none;
+}
+
+
+.icon_mobile img{
+    width:30px;
+    height:30px;
+}
+
+@media(max-width:768px){
+
+nav{
+    position:relative;
+    padding:20px;
+}
+.icon_mobile{
+    display:flex;
+    align-items:center;
+}
+.menu-toggle{
+    display:block;
+    margin-left:auto;
+}
+
+.menu{
+
+    display:none;
+
+    position:absolute;
+
+    top:80px;
+
+    left:0;
+
+    width:100%;
+
+    background:white;
+
+    padding:25px;
+
+    box-sizing:border-box;
+
+    flex-direction:column;
+
+    border-top:1px solid #ddd;
+
+}
+
+.menu ul{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.menu button{
+
+    width:100%;
+
+}
+
+.section_profil{
+
+    flex-direction:column-reverse;
+
+    text-align:center;
+
+}
+
+.text_profil{
+
+    margin-bottom:30px;
+
+}
+
+.button_contact{
+
+    display:block;
+
+    text-align:center;
+
+}
+
+.photo img{
+
+    width:100%;
+
+}
+
+.bloc_competence{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.bloc_design{
+
+    padding:20px;
+
+}
+
+.section_projet{
+
+    padding:20px;
+
+}
+
+.bloc_voir_plus{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+}
+
+.content_projet{
+
+    width:100%;
+
+}
+
+.contact-form{
+
+    padding:20px;
+
+}
+
+.contact-form input,
+
+.contact-form textarea{
+
+    width:100%;
+
+}
+
+.section_footer{
+
+    text-align:center;
+
+}
+
+.footer_liens{
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.footer2{
+
+    margin-left:0;
+
+}
+
+}
+
+/* Petit téléphone */
+
+@media(max-width:480px){
+
+.nom{
+
+    font-size:22px;
+
+}
+
+h1{
+
+    font-size:34px;
+
+}
+
+h2{
+
+    font-size:28px;
+
+}
+
+.text_contenu{
+
+    font-size:15px;
+
+}
+
+.bloc_competence{
+
+    grid-template-columns:1fr;
+
+}
+
+.content_projet{
+
+    padding:20px;
+
+}
+
+}
+
+
+
+/* ==========================================
+RESPONSIVE
+========================================== */
+
+/************ TABLETTE ************/
+@media screen and (max-width:992px){
+
+    .marge{
+        margin:0;
+        padding:20px;
+    }
+
+    nav{
+        padding:20px;
+    }
+
+    .section_profil{
+        flex-direction:column;
+        text-align:center;
+        gap:40px;
+    }
+
+    .text_profil{
+        margin-bottom:0;
+    }
+
+    .photo img{
+        width:80%;
+        max-width:350px;
+    }
+
+    .texte_apropos{
+        column-count:1;
+        margin:40px 0;
+    }
+
+    .bloc_competence{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
+        margin:50px 0;
+    }
+
+    .bloc_projet{
+        flex-wrap:wrap;
+        gap:20px;
+    }
+
+    .content_projet{
+        width:48%;
+    }
+
+    .contact{
+        flex-direction:column;
+    }
+
+    .contact-info,
+    .contact-form{
+        width:100%;
+    }
+
+    .section_footer{
+        flex-direction:column;
+        text-align:center;
+        gap:20px;
+    }
+
+    .footer_liens{
+        margin-left:0;
+    }
+
+    .footer2{
+        margin-left:0;
+    }
+
+}
+
+
+/************ MOBILE ************/
+@media screen and (max-width:768px){
+
+    .marge{
+        padding:15px;
+    }
+
+    nav{
+        padding:15px;
+        position:relative;
+    }
+
+    .menu{
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        top:75px;
+        left:0;
+        width:100%;
+        background:white;
+        padding:20px;
+        border-top:1px solid #ddd;
+        z-index:1000;
+    }
+
+    .menu.active{
+        display:flex;
+    }
+
+    .menu ul{
+        flex-direction:column;
+        gap:20px;
+        width:100%;
+    }
+
+    .menu button{
+        width:100%;
+    }
+
+    .menu_hamburger{
+        display:flex;
+    }
+
+    .nom{
+        font-size:22px;
+    }
+
+    h1{
+        font-size:34px;
+    }
+
+    h2{
+        font-size:28px;
+    }
+
+    .section_profil{
+        flex-direction:column-reverse;
+    }
+
+    .photo img{
+        width:100%;
+    }
+
+    .bloc_competence{
+        grid-template-columns:1fr;
+    }
+
+    .bloc_design{
+        width:100%;
+    }
+
+    .bloc_projet{
+        flex-direction:column;
+    }
+
+    .content_projet{
+        width:100%;
+    }
+
+    .filtres{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .filtre{
+        flex:1 1 140px;
+    }
+
+    .liste_projets{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .carte_projet{
+        width:100%;
+    }
+
+    .contenu_projet{
+        padding:20px;
+    }
+
+    .btn_projet{
+        display:block;
+        width:100%;
+        text-align:center;
+        padding:14px;
+    }
+
+    .btn_voir_plus{
+        display:block;
+        width:100%;
+        text-align:center;
+    }
+
+    .section_contact{
+        padding:15px;
+    }
+
+    .contact-form{
+        padding:20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+        width:100%;
+    }
+
+    .section_contact_cta{
+        padding:40px 20px;
+        margin:50px 0;
+    }
+
+    .section_contact_cta h2{
+        font-size:30px;
+    }
+
+    .section_contact_cta p{
+        font-size:16px;
+    }
+
+    .btn_contact_cta{
+        width:100%;
+        text-align:center;
+    }
+
+    .section_footer{
+        padding:30px 15px;
+    }
+
+    .footer_liens{
+        flex-direction:column;
+        gap:10px;
+    }
+
+}
+
+
+/************ PETITS TELEPHONES ************/
+@media screen and (max-width:480px){
+
+    .nom{
+        font-size:18px;
+    }
+
+    h1{
+        font-size:28px;
+    }
+
+    h2{
+        font-size:24px;
+    }
+
+    p{
+        font-size:15px;
+    }
+
+    .titre-section2{
+        margin:30px 0;
+    }
+
+    .contenu_projet{
+        padding:18px;
+    }
+
+    .btn_projet,
+    .btn_contact_cta,
+    .btn_voir_plus{
+        padding:12px;
+        font-size:14px;
+    }
+
 }

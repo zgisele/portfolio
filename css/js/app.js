@@ -23,3 +23,11 @@ boutons.forEach(bouton => {
 
     });
 });
+
+
+const hamburger = document.querySelector(".menu_hamburger");
+const menu = document.querySelector("nav");
+
+hamburger.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
