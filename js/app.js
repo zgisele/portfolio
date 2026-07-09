@@ -1,5 +1,29 @@
 // **********************fitre des projet par categorie***************************************************
+const filtres = document.querySelectorAll(".filtre");
+const carte_projets = document.querySelectorAll(".carte_projet");
 
+filtres.forEach(filtre => {
+    filtre.addEventListener("click", () => {
+
+        // Met à jour le bouton actif
+        document.querySelector(".filtre.actif").classList.remove("actif");
+        filtre.classList.add("actif");
+
+        // Récupère la catégorie
+        const categorie = filtre.dataset.filter;
+
+        carte_projets.forEach(projet => {
+
+            if (categorie === "all" || projet.dataset.category === categorie) {
+                projet.style.display = "block";
+            } else {
+                projet.style.display = "none";
+            }
+
+        });
+
+    });
+});
 
 // ***************telecharger un cv*********************************************
 const btnCV = document.getElementById("telechargeCv");
@@ -36,15 +60,6 @@ if (menuHamburger && menuMobile) {
                 e.preventDefault();
             // });
       
-
-
-// const formulaire = document.getElementById("contactForm");
-
-// formulaire.addEventListener("submit", function(event) {
-
-//     // Empêche l'envoi classique du formulaire
-//     event.preventDefault();
-
     // Récupération des valeurs
     const nom = document.getElementById("nom").value.trim();
     const email = document.getElementById("email").value.trim();
