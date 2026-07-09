@@ -137,17 +137,17 @@
                     <div class="content_projet">
                         <h3>Echo App</h3>
                         <div>Refonte complète d'une plateforme de streaming audio minimaliste.</div>
-                        <a href="">Voir le projet <img src="assets/images/fleche.svg" alt="fleche"></a>
+                        <a href="#" class="voir-projet" data-project="Echo">Voir le projet <img src="assets/images/fleche.svg" alt="fleche"></a>
                     </div>
                     <div  class="content_projet">
                         <h3>DataVizu</h3>
                         <div>Outil de dashboarding pour l'analyse de données complexes en temps réel.</div>
-                        <a href="">Voir le projet <img src="assets/images/fleche.svg" alt="fleche"></a>
+                        <a href="#" class="voir-projet" data-project="datavizu">Voir le projet <img src="assets/images/fleche.svg" alt="fleche"></a>
                     </div>
                     <div  class="content_projet">
-                        <h3>Echo App</h3>
+                        <h3>fashion</h3>
                         <div>E-commerce conceptuel pour une marque de haute couture éthique.</div>
-                        <a href="">Voir le projet <img src="assets/images/fleche.svg" alt="fleche"></a>
+                        <a href="#" class="voir-projet" data-project="fashion">Voir le projet <img src="assets/images/fleche.svg" alt="fleche"></a>
                     </div>
                 </div>
             
@@ -232,7 +232,32 @@
         
             
     </footer>
-    <script src="js/app.js"></script>
     
+    
+
+    <div class="modal" id="modal">
+
+        <div class="modal-content">
+
+            <span class="close">&times;</span>
+
+            <img id="modal-image" src="" alt="Projet">
+
+            <h2 id="modal-title"></h2>
+
+            <p id="modal-description"></p>
+
+            <h3>Technologies</h3>
+
+            <ul id="modal-tech"></ul>
+
+            <a id="modal-link" href="#" target="_blank">
+                Voir le site
+            </a>
+
+        </div>
+
+    </div>
+    <script src="js/app.js"></script>
 </body>
 </html>

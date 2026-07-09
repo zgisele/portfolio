@@ -127,8 +127,7 @@ h1{
     border: none;
     color: white;
     border-radius: 10px;
-    text-decoration: none;
-    
+    text-decoration: none; 
 
 }
 
@@ -196,6 +195,7 @@ h1{
 }
 .im_design ,.im_design img{
      background-color: rgba(128, 128, 128, 0.0);
+
 }
 .im_design,.im_stra {
      display: flex;
@@ -204,8 +204,13 @@ h1{
 }
 .text_design{
      background-color: rgba(128, 128, 128, 0.0);
+     
+    
 }
-/* ******************************************section projets *********************************************************/
+/* ********************************************************* *********************************************************/
+/*                                                                                                                   */
+/*                                           section projets                                                         */
+/* ********************************************************* *********************************************************/
 .section_projet{
     padding: 30px;
     background-color: rgba(128, 128, 128, 0.1);
@@ -598,16 +603,23 @@ RESPONSIVE
         align-items:center;
         width:100%;
         padding:20px;
+        border: 5px solid red;
     }
 
     .menu{
         display:none;
+        
     }
 
     .menu_hamburger{
         display:flex;
-        margin-left:auto;
+        /* margin-left:auto; */
+       
+
     }
+    .nom{
+    margin-right: auto;
+}
 
 }
 
@@ -693,7 +705,7 @@ RESPONSIVE
 
 .icon_mobile img{
     width:30px;
-    height:30px;
+    height:30px;   
 }
 
 @media(max-width:768px){
@@ -766,14 +778,17 @@ nav{
 .button_contact{
 
     display:block;
-
-    text-align:center;
+    text-align:center;  
 
 }
 
 .photo img{
 
     width:100%;
+
+}
+.button_contact{
+   margin-top: 40px; 
 
 }
 
@@ -786,9 +801,11 @@ nav{
 .bloc_design{
 
     padding:20px;
-
+   
 }
-
+.text_design{
+     text-align:center;
+}
 .section_projet{
 
     padding:20px;
@@ -851,37 +868,37 @@ nav{
 
 @media(max-width:480px){
 
-.nom{
+    .nom{
 
-    font-size:22px;
+        font-size:22px;
 
-}
+    }
 
-h1{
+    h1{
 
-    font-size:34px;
+        font-size:34px;
 
-}
+    }
 
-h2{
+    h2{
 
-    font-size:28px;
+        font-size:28px;
 
-}
+    }
 
-.text_contenu{
+    .text_contenu{
 
-    font-size:15px;
+        font-size:15px;
 
-}
+    }
 
-.bloc_competence{
+    .bloc_competence{
 
-    grid-template-columns:1fr;
+        grid-template-columns:1fr;
 
-}
+    }
 
-.content_projet{
+    .content_projet{
 
     padding:20px;
 
@@ -925,6 +942,9 @@ RESPONSIVE
     .texte_apropos{
         column-count:1;
         margin:40px 0;
+    }
+    .text_design{
+        text-align:center;
     }
 
     .bloc_competence{
@@ -1123,6 +1143,31 @@ RESPONSIVE
         gap:10px;
     }
 
+     .modal-content {
+        width: 90%;
+        max-height: 90vh;
+        padding: 15px;
+        overflow-y: auto;
+    }
+
+    .modal-content img {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+    }
+
+    .modal-content h2 {
+        font-size: 20px;
+    }
+
+    .btn_projet{
+     display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; 
+    
+    
+}
+
 }
 
 
@@ -1160,4 +1205,118 @@ RESPONSIVE
         font-size:14px;
     }
 
+    .modal-content {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .modal-content img {
+        max-width: 200px;
+    }
+
 }
+
+/* ***********************fenêtre modale *****************************************/
+
+ .modal{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content{
+    width: 700px;
+    max-width: 90%;
+    background: #6B8F71; /* Vert-gris */
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0,0,0,.35);
+    animation: zoom .3s ease;
+}
+
+.modal-content h2{
+    color: #F5F5F5;
+    margin-bottom: 15px;
+}
+
+.modal-content h3{
+    color: #DCE8DD;
+    margin-top: 20px;
+}
+
+.modal-content p{
+    line-height: 1.7;
+    color: #F8F8F8;
+}
+
+.modal-content img{
+    /* width: 100%; */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 3px solid #A3B18A;
+    max-height: 300px;
+    width: auto;
+    object-fit: contain;
+}
+
+.modal-content ul{
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.modal-content li{
+    margin-bottom: 8px;
+}
+
+#modal-link{
+    display: inline-block;
+    margin-top: 20px;
+    background: #A3B18A;
+    color: #2F3E34;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+#modal-link:hover{
+    background: #DCE8DD;
+}
+
+.close{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.close:hover{
+    color: #DCE8DD;
+    transform: rotate(90deg);
+}
+
+@keyframes zoom{
+    from{
+        transform: scale(.8);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+
+
+

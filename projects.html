@@ -47,30 +47,11 @@
             <button class="filtre" data-filter="webdesign">Web Design</button>
         </div>
 
-        <!-- <div class="projets">
-            <div class="projet" data-category="html">
-                Projet Portfolio
-            </div>
-
-            <div class="projet" data-category="javascript">
-                Application Todo
-            </div>
-
-            <div class="projet" data-category="webdesign">
-                Maquette Figma
-            </div>
-
-            <div class="projet" data-category="html">
-                Landing Page
-            </div>
-        </div> -->
         <!-- Liste des projets -->
         <div class="liste_projets" id="projects">
 
             <article class="carte_projet" data-category="html">
-                <!-- <div class="image_projet">
-                    <img src="assets/images/projet1.jpg" alt="Portfolio personnel">
-                </div> -->
+                
 
                 <div class="contenu_projet">
                     <h3>Portfolio Personnel</h3>
@@ -82,9 +63,10 @@
 
                     <!-- <span>HTML • CSS • Responsive</span> -->
 
-                    <a href="#" class="btn_projet">
+                    <a href="#" class="btn_projet voir-projet"   data-project="portfolio">
                         Voir le projet
                     </a>
+                    
                 </div>
             </article>
 
@@ -95,7 +77,7 @@
                     <p>
                         Page d'accueil moderne optimisée pour la présentation d'un produit.
                     </p>
-                    <a href="#" class="btn_projet">
+                    <a href="#" class="btn_projet voir-projet"  data-project="landing">
                         Voir le projet
                     </a>
                 </div>
@@ -115,7 +97,7 @@
 
                     <!-- <span>HTML • CSS • Responsive</span> -->
 
-                    <a href="#" class="btn_projet">
+                    <a href="#" class="btn_projet voir-projet"  data-project="restaurant">
                         Voir le projet
                     </a>
                 </div>
@@ -135,7 +117,7 @@
 
                     <!-- <span>HTML • CSS • Responsive</span> -->
 
-                    <a href="#" class="btn_projet">
+                    <a href="#" class="btn_projet voir-projet"   data-project="portfolio">
                         Voir le projet
                     </a>
                 </div>
@@ -155,7 +137,7 @@
 
                     <!-- <span>HTML • CSS • Flexbox</span> -->
 
-                    <a href="#" class="btn_projet">
+                    <a href="#" class="btn_projet voir-projet"  data-project="landing">
                         Voir le projet
                     </a>
                 </div>
@@ -175,7 +157,7 @@
 
                     <!-- <span>HTML • CSS • Responsive</span> -->
 
-                    <a href="#" class="btn_projet">
+                    <a href="#" class="btn_projet voir-projet"  data-project="restaurant">
                         Voir le projet
                     </a>
                 </div>
@@ -220,6 +202,30 @@
             <p class="footer2">© 2024 PORTFOLIO. ROOTED IN PURPOSE.</p>
         </section>        
     </footer>
+
+    <div class="modal" id="modal">
+
+        <div class="modal-content">
+
+            <span class="close">&times;</span>
+
+            <img id="modal-image" src="" alt="Projet">
+
+            <h2 id="modal-title"></h2>
+
+            <p id="modal-description"></p>
+
+            <h3>Technologies</h3>
+
+            <ul id="modal-tech"></ul>
+
+            <a id="modal-link" href="#" target="_blank">
+                Voir le site
+            </a>
+
+        </div>
+
+    </div>
     <script src="js/app.js"></script>
 </body>
 </html>

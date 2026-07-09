@@ -29,12 +29,21 @@ if (menuHamburger && menuMobile) {
 }
 // **************************validation formulaire********************************************
 
-const formulaire = document.getElementById("contactForm");
+        const formulaire = document.querySelector(".contact-form");
 
-formulaire.addEventListener("submit", function(event) {
+        if (formulaire) {
+            formulaire.addEventListener("submit", (e) => {
+                e.preventDefault();
+            // });
+      
 
-    // Empêche l'envoi classique du formulaire
-    event.preventDefault();
+
+// const formulaire = document.getElementById("contactForm");
+
+// formulaire.addEventListener("submit", function(event) {
+
+//     // Empêche l'envoi classique du formulaire
+//     event.preventDefault();
 
     // Récupération des valeurs
     const nom = document.getElementById("nom").value.trim();
@@ -74,4 +83,109 @@ formulaire.addEventListener("submit", function(event) {
     // Réinitialiser le formulaire
     formulaire.reset();
 
+});
+  }
+
+
+// ***************************fenêtre modale*************************************
+
+
+const projets = {
+    echo: {
+        titre: "Echo App",
+        image: "assets/images/app.jpg",
+        description: "Application de streaming audio avec une interface moderne.",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        lien: "https://monsite.com"
+    },
+
+    datavizu: {
+        titre: "DataVizu",
+        image: "assets/images/data.svg",
+        description: "Dashboard interactif pour l'analyse des données.",
+        technologies: ["HTML", "CSS", "Chart.js"],
+        lien: "https://monsite.com"
+    },
+
+    fashion: {
+        titre: "Fashion Store",
+        image: "assets/images/fashion.svg",
+        description: "Boutique e-commerce spécialisée dans la mode éthique.",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        lien: "https://monsite.com"
+    },
+     portfolio: {
+        titre: "Portfolio Personnel",
+        image: "assets/images/portfolio.svg",
+        description: "Site vitrine responsive présentant mon parcours, mes compétences et mes réalisations.",
+        technologies: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+        lien: "https://monsite.com"
+    },
+
+    restaurant: {
+        titre: "Site Restaurant",
+        image: "assets/images/meal.svg",
+        description: "Site web responsive permettant de présenter un restaurant, son menu, ses services et son système de réservation.",
+        technologies: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+        lien: "https://monsite.com"
+    },
+
+    landing: {
+        titre: "Landing Page",
+        image: "assets/images/landing.svg",
+        description: "Page d'accueil moderne conçue pour présenter un produit ou un service avec une interface claire et attractive.",
+        technologies: ["HTML", "CSS", "JavaScript", "UI Design"],
+        lien: "https://monsite.com"
+    }
+};
+
+const modal = document.getElementById("modal");
+
+document.querySelectorAll(".voir-projet").forEach(bouton => {
+
+    bouton.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        const projet = projets[this.dataset.project];
+        if(!projet){
+            console.error("Projet introuvable :", this.dataset.project);
+            return;
+        }
+
+        document.getElementById("modal-title").textContent = projet.titre;
+        document.getElementById("modal-image").src = projet.image;
+        document.getElementById("modal-description").textContent = projet.description;
+        document.getElementById("modal-link").href = projet.lien;
+
+        const liste = document.getElementById("modal-tech");
+        liste.innerHTML = "";
+
+        projet.technologies.forEach(tech => {
+            const li = document.createElement("li");
+            li.textContent = tech;
+            liste.appendChild(li);
+        });
+
+        modal.style.display = "flex";
+
+    });
+
+});
+
+// document.querySelector(".close").addEventListener("click", () => {
+//     modal.style.display = "none";
+// });
+const closeBtn = document.querySelector(".close");
+
+if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+}
+
+window.addEventListener("click", (e) => {
+    if(e.target === modal){
+        modal.style.display = "none";
+    }
 });
