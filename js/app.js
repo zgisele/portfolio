@@ -106,9 +106,9 @@ if (menuHamburger && menuMobile) {
 
 
 const projets = {
-    echo: {
+    Echo: {
         titre: "Echo App",
-        image: "assets/images/app.jpg",
+        image: "assets/images/app.svg",
         description: "Application de streaming audio avec une interface moderne.",
         technologies: ["HTML", "CSS", "JavaScript"],
         lien: "https://monsite.com"
@@ -204,3 +204,54 @@ window.addEventListener("click", (e) => {
         modal.style.display = "none";
     }
 });
+
+// *************************gestion du bouton voir plus de projet**********************************************
+const cartes = document.querySelectorAll(".carte_projet");
+const btnVoirPlus = document.querySelector(".btn_voir_plus");
+
+let ouvert = false;
+
+// Cacher les projets après les 4 premiers
+cartes.forEach((carte, index) => {
+    if (index >= 4) {
+        carte.style.display = "none";
+    }
+});
+
+if (btnVoirPlus) {
+    btnVoirPlus.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        if (!ouvert) {
+
+            // Afficher tous les projets
+            cartes.forEach(carte => {
+                carte.style.display = "block";
+            });
+
+            // Changer le texte du bouton
+            btnVoirPlus.textContent = "Voir moins de projets ↑";
+
+            ouvert = true;
+
+        } else {
+
+            // Revenir aux 4 premiers projets
+            cartes.forEach((carte, index) => {
+                if (index >= 4) {
+                    carte.style.display = "none";
+                }
+            });
+
+            // Rechanger le texte
+            btnVoirPlus.textContent = "Voir plus de projets →";
+
+            ouvert = false;
+
+            // Remonter vers la liste des projets
+            document.getElementById("projects").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    });
+}
